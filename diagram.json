@@ -6,29 +6,29 @@
     {
       "type": "wokwi-pi-pico",
       "id": "pico",
-      "top": 0,
-      "left": 0,
+      "top": -104,
+      "left": 10.67,
       "attrs": { "env": "micropython-20220117-v1.18" }
     },
     {
       "type": "wokwi-led",
       "id": "led1",
-      "top": -23.52,
-      "left": -55.08,
+      "top": -197.9,
+      "left": 24.24,
       "attrs": { "color": "red" }
     },
     {
-      "type": "wokwi-led",
-      "id": "led2",
-      "top": -24.2,
-      "left": -94.32,
-      "attrs": { "color": "blue" }
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -13.8,
+      "left": -214.01,
+      "attrs": { "color": "green" }
     }
   ],
   "connections": [
-    [ "pico:GP1", "led1:A", "green", [ "h0" ] ],
+    [ "led1:A", "pico:GP1", "green", [ "v0" ] ],
     [ "led1:C", "pico:GND.1", "green", [ "v0" ] ],
-    [ "led2:A", "pico:GP2", "green", [ "v0" ] ],
-    [ "pico:GND.2", "led2:C", "black", [ "h0" ] ]
+    [ "btn1:1.r", "pico:GP5", "green", [ "v0" ] ],
+    [ "btn1:2.r", "pico:3V3", "green", [ "h103.35", "v106.79", "h177.44", "v-162.44" ] ]
   ]
 }
