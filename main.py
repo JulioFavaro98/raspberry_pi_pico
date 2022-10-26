@@ -1,9 +1,10 @@
-import machine
+from machine import Pin
 import utime
-led = machine.Pin(1, machine.Pin.OUT)
-button = machine.Pin(5, machine.Pin.IN, machine.Pin.PULL_DOWN)
+
+led = Pin(15, Pin.OUT)
+botao = Pin(5, Pin.IN, Pin.PULL_DOWN)
 
 while True:
-    if button.value() == 1:
+    if botao.value() == 1:
         led.toggle()
-        utime.sleep(0.1)
+        utime.sleep(0.5)
