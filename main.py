@@ -1,10 +1,20 @@
 from machine import Pin
 import utime
 
-led = Pin(15, Pin.OUT)
-botao = Pin(5, Pin.IN, Pin.PULL_DOWN)
+led1 = Pin(15, Pin.OUT)
+led2 = Pin(14, Pin.OUT)
+led3 = Pin(13, Pin.OUT)
 
 while True:
-    if botao.value() == 1:
-        led.toggle()
-        utime.sleep(0.5)
+    led1.value(1)
+    led2.value(0)
+    led3.value(0)
+    utime.sleep(3)
+    led1.value(0)
+    led2.value(1)
+    led3.value(0)
+    utime.sleep(3)
+    led1.value(0)
+    led2.value(0)
+    led3.value(1)
+    utime.sleep(3)
